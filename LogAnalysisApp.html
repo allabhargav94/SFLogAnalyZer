@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Font Awesome -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/1.0.0/mdb.min.js"
+    ></script>
+    <!--<script src="https://d3js.org/d3.v6.min.js"></script>-->
+    <script src="LogAnalysisApp.js"></script>
+    <link rel="stylesheet" href="LogAnalysisApp.css" />
+
+        <title>Log Analysis App</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-sm-12 col-lg-12 border border-secondary" id="customfilesection" dropzone="true" ondrop="drop(event)"  ondragover="allowDrop(event)">
+                  <div class="card-body">
+                    <p class="card-text">
+                            <div class="form-file">
+                                    <input type="file" class="form-file-input" id="customFile" onchange="proceesFile(event)"/>
+                                    <label class="form-file-label" for="customFile">
+                                      <span class="form-file-text">Choose file...</span>
+                                      <span class="form-file-button">Browse</span>
+                                    </label>
+                                  </div>         
+                    </p>
+                    <p id="nameOfFile"></p> 
+                    <button class="btn btn-primary" type="button" onclick="startAnalysis()"  id="analysisButton">Start Analysis
+                        <span id="btnStatus" class="spinner-grow spinner-grow-sm invisible" role="status" aria-hidden="true"></span>
+                         <!-- <span id="btnStatusText" class="invisible">Analysis...</span>  
+                          <span id="btnStatusIdle" class="visible">Analysis</span>  -->
+                          </button> &nbsp;&nbsp;&nbsp; <span class="badge bg-primary" id="timeLapse"></span>&nbsp;&nbsp;
+                          <button class="btn btn-info btn-rounded btnfilter" type="button" onclick="filterTheLogByEvents()"  id="filterTheLogByEvents">Apply Filter</button>
+                  </div>
+      </div>
+      <!-- Pro Tips
+      <div class="col-6 col-lg-4 border border-secondary">
+                      <div class="card border border-secondary shadow-0 mb-3">
+                            <div class="card-header">Pro Tips</div>
+                            <div class="card-body">
+                              <p class="card-text">
+                                    Keep Logging Level while debugging it reduce log size
+                              </p>
+                              <p class="card-text">
+                                    Apply Proper Filter Ex:you can avoid vlidation log level while debugging workflow.
+                              </p>
+                              <p class="card-text">
+                                    No Worry we are here to analyz your log :)
+                              </p>
+                            </div>
+                          </div>
+      </div>-->
+      <!-- Pro Tips End-->
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-lg-12 border border-secondary" id="loggingLevels">
+
+      </div>
+    </div>
+    <div class="row" id="logLevels">
+
+
+
+    </div>
+      <!-- Tabs navs -->
+      <ul class="nav nav-tabs nav-fill mb-3" id="logAnalysisTabs" role="tablist">
+
+    </ul>
+    <!-- Tabs content -->
+
+    <div class="tab-content" id="logAnalysisTabsContent">
+    
+    </div>
+  </body>
+</html>
